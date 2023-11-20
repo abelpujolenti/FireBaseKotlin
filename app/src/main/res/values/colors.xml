@@ -5,6 +5,8 @@
     <color name="lightGrey">#666267</color>
     <color name="baseLight">#EDDC9D</color>
     <color name="lightLight">#F3E8C3</color>
+    <color name="baseLightAlphaMedium">#80EDDC9D</color>
+    <color name="baseLightAlphaLow">#40EDDC9D</color>
 
     <!-- Indication Colors -->
     <color name="baseRed">#661209</color>

@@ -9,15 +9,17 @@
         <item name="colorPrimary">@color/baseLight</item>
         <item name="colorPrimaryVariant">@color/lightLight</item>
         <item name="colorOnPrimary">@color/baseGrey</item>
+        <item name="android:textColorPrimary">@color/baseLight</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/baseGrey</item>
         <item name="colorSecondaryVariant">@color/lightGrey</item>
         <item name="colorOnSecondary">@color/baseLight</item>
+        <item name="android:textColorSecondary">@color/debugColor</item>
 
         <!--Surface Color -->
         <item name="colorSurface">?attr/colorSecondary</item>
-        <item name="colorOnSurface">?attr/colorOnSecondary</item>
+        <item name="colorOnSurface">@color/clearColor</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/baseGrey</item>
@@ -31,11 +33,20 @@
 
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/ModuloDosFirabase.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/ModuloDosFirabase.BottomBar</item>
+
     </style>
 
     <style name="ModuloDosFirabase.Toolbar" parent="Widget.MaterialComponents.Toolbar" >
         <item name="android:background">@color/baseGrey</item>
         <item name="android:elevation">@dimen/shadow_elevation</item>
+    </style>
+
+    <style name="ModuloDosFirabase.BottomBar" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/baseGrey</item>
+        <item name="android:elevation">@dimen/shadow_elevation</item>
+        <item name="itemIconTint">@color/selectables_buttons_color</item>
+        <item name="itemRippleColor">@color/baseLightAlphaLow</item>
     </style>
 
 </resources>

@@ -2,30 +2,43 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/material_toolbar"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentToolbarContainer"
+            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/app_name">
+            android:layout_alignParentTop="true"
+            tools:layout="@layout/component_toolbar">
 
-        </com.google.android.material.appbar.MaterialToolbar>
+        </androidx.fragment.app.FragmentContainerView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/material_card_view"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentNavHostContainer"
+            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppNavHost"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/material_toolbar"
-            android:layout_margin="@dimen/margin_normal"
-            >
+            android:layout_height="match_parent"
+            tools:layout="@layout/component_navhost"
+            android:layout_below="@id/componentToolbarContainer">
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.fragment.app.FragmentContainerView>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/componentNavigationBottomBarContainer"
+            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:layout="@layout/component_bottombar"
+            android:layout_above="@id/componentNavigationBottomBarContainer">
+
+        </androidx.fragment.app.FragmentContainerView>
 
     </RelativeLayout>
 
