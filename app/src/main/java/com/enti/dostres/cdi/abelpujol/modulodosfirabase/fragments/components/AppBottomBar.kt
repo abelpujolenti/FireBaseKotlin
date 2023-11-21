@@ -38,12 +38,15 @@ class AppBottomBar: Fragment() {
 
             AppToolbar.get().toolbar.title = menuItem.title
 
-            when(menuItem.itemId){
-                R.id.home_bottom_bar_button -> {
-                    AppNavHost.get().navHost.navigate(R.id.home_navigation_screen)
-                }
-                R.id.chat_bottom_bar_button -> {
-                    AppNavHost.get().navHost.navigate(R.id.chat_navigation_screen)
+            if (menuItem.itemId != bottomBar.selectedItemId)
+            {
+                when(menuItem.itemId){
+                    R.id.home_bottom_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_chat_to_home)
+                    }
+                    R.id.chat_bottom_bar_button -> {
+                        AppNavHost.get().navHost.navigate(R.id.transition_home_to_chat)
+                    }
                 }
             }
             true
