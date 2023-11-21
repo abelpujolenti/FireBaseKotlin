@@ -40,6 +40,7 @@
     <style name="ModuloDosFirabase.Toolbar" parent="Widget.MaterialComponents.Toolbar" >
         <item name="android:background">@color/baseGrey</item>
         <item name="android:elevation">@dimen/shadow_elevation</item>
+        <item name="navigationIconTint">@color/baseLight</item>
     </style>
 
     <style name="ModuloDosFirabase.BottomBar" parent="Widget.MaterialComponents.BottomNavigationView">

@@ -32,8 +32,21 @@ class AppToolbar : Fragment() {
         return view
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }*/
+
+        toolbar.setNavigationOnClickListener {
+            
+        }
+
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.toolbar_button_test -> {
+
+                }
+            }
+            true
+        }
+    }
 
 }

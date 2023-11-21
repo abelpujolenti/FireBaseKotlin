@@ -8,7 +8,9 @@
         android:id="@+id/AppToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/app_name">
+        app:title="@string/app_name"
+        app:navigationIcon="@drawable/toolbar_navigation_icon"
+        app:menu="@menu/toolbar_base_menu">
 
     </com.google.android.material.appbar.MaterialToolbar>
 
