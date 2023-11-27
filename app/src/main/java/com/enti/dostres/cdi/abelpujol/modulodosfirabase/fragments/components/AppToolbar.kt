@@ -6,7 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.enti.dostres.cdi.abelpujol.modulodosfirabase.R
+import com.enti.dostres.cdi.abelpujol.modulodosfirabase.clases.firebase.MyFirebase
+import com.enti.dostres.cdi.abelpujol.modulodosfirabase.clases.firebase.MyFirebaseAnalytics
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
+import com.google.firebase.crashlytics.setCustomKeys
 
 class AppToolbar : Fragment() {
 
@@ -36,13 +41,18 @@ class AppToolbar : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.setNavigationOnClickListener {
-            
+
         }
 
         toolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
                 R.id.toolbar_button_test -> {
-
+                    //throw RuntimeException("Test Crash") // Force a crash
+                    MyFirebase.crashlytics.logSimpleError("Subnormal Error"){
+                        key("Subnormal Name", "Abraham")
+                        key("IsSubnormal", true)
+                        key("Level of Subnormality", 9001)
+                    };
                 }
             }
             true
