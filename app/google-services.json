@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840499100287",
+    "project_id": "modulodosfirebasecdi-19e19",
+    "storage_bucket": "modulodosfirebasecdi-19e19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840499100287:android:476fb2434d5e12153f1d4a",
+        "android_client_info": {
+          "package_name": "com.enti.dostres.cdi.abelpujol.modulodosfirabase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTpm_PqBrni5wLnH7TNaf6BS3ZtIRkZ7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
