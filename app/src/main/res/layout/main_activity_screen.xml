@@ -5,41 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <RelativeLayout
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navigationDrawerContainer"
+        android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppDrawer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout="@layout/component_navigationdrawer">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentToolbarContainer"
-            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            tools:layout="@layout/component_toolbar">
-
-        </androidx.fragment.app.FragmentContainerView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentNavHostContainer"
-            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppNavHost"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/component_navhost"
-            android:layout_below="@id/componentToolbarContainer">
-
-        </androidx.fragment.app.FragmentContainerView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentNavigationBottomBarContainer"
-            android:name="com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.components.AppBottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            tools:layout="@layout/component_bottombar"
-            android:layout_above="@id/componentNavigationBottomBarContainer">
-
-        </androidx.fragment.app.FragmentContainerView>
-
-    </RelativeLayout>
+    </androidx.fragment.app.FragmentContainerView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

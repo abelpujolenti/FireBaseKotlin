@@ -32,9 +32,16 @@
         <item name="android:colorBackground">?attr/colorPrimary</item>
 
         <!-- Customize your theme here. -->
+        <item name="navigationViewStyle">@style/ModuloDosFirebase.Drawer</item>
         <item name="toolbarStyle">@style/ModuloDosFirabase.Toolbar</item>
         <item name="bottomNavigationStyle">@style/ModuloDosFirabase.BottomBar</item>
 
+    </style>
+
+    <style name="ModuloDosFirebase.Drawer" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemIconTint">@color/baseLight</item>
+        <item name="itemTextColor">@color/baseLight</item>
+        <item name="elevation">@dimen/shadow_elevation</item>
     </style>
 
     <style name="ModuloDosFirabase.Toolbar" parent="Widget.MaterialComponents.Toolbar" >
@@ -48,6 +55,35 @@
         <item name="android:elevation">@dimen/shadow_elevation</item>
         <item name="itemIconTint">@color/selectables_buttons_color</item>
         <item name="itemRippleColor">@color/baseLightAlphaLow</item>
+    </style>
+    <style name="ModuloDosFirebaseCDI.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/shadow_elevation</item>
+    </style>
+
+    <style name="ModuloDosFirebaseCDI.Input" parent = "@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">@dimen/tiny</item>
+        <item name="boxStrokeWidthFocused">@dimen/tiny</item>
+        <item name="boxStrokeErrorColor">@color/baseRed</item>
+        <item name="android:textColorHint">@color/baseLight</item>
+        <item name="hintTextColor">@color/lightLight</item>
+        <item name="startIconTint">@color/baseLight</item>
+        <item name="endIconTint">@color/baseLight</item>
+    </style>
+
+    <style name="ModuloDosFirebaseCDI.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/baseLight</item>
+        <item name="backgroundTint">@color/baseGrey</item>
+        <item name="rippleColor">@color/lightLight</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">@dimen/shadow_elevation</item>
+    </style>
+
+    <style name="ModuloDosFirebaseCDI.Button.NoShadow" parent="ModuloDosFirebaseCDI.Button">
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="ModuloDosFirebaseCDI.FloatingButtonExtended" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+
     </style>
 
 </resources>

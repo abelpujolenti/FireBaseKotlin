@@ -41,7 +41,7 @@ class AppToolbar : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.setNavigationOnClickListener {
-
+            AppDrawer.get().OpenDrawer()
         }
 
         toolbar.setOnMenuItemClickListener { menuItem ->
@@ -58,5 +58,4 @@ class AppToolbar : Fragment() {
             true
         }
     }
-
 }
