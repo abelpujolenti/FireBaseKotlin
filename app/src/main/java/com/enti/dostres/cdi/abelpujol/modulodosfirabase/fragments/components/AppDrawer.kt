@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.fragment.app.Fragment
 import com.enti.dostres.cdi.abelpujol.modulodosfirabase.R
+import com.enti.dostres.cdi.abelpujol.modulodosfirabase.clases.firebase.MyFirebase
 import com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.screens.LoginScreen
 import com.google.android.material.navigation.NavigationView
 
-class AppDrawer : Fragment() {
+class AppDrawer : Fragment(), DrawerListener {
 
     companion object{
 
@@ -35,13 +37,13 @@ class AppDrawer : Fragment() {
     ): View? {
         fragmentView = inflater.inflate(R.layout.component_navigationdrawer, container, false);
 
-
-
         return fragmentView;
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        drawer.addDrawerListener(this);
 
         navigationDrawer.setNavigationItemSelectedListener { menuItem ->
 
@@ -49,17 +51,13 @@ class AppDrawer : Fragment() {
             {
                 R.id.login_drawer_button -> {
 
-                    val loginScreen = LoginScreen();
-                    childFragmentManager.beginTransaction()
-                        .setCustomAnimations(
-                        R.anim.enter_from_right, R.anim.exit_to_right,
-                        R.anim.enter_from_right, R.anim.exit_to_right)
-                        .replace(R.id.reusableDialogContainer, loginScreen)
-                        .addToBackStack(null)
-                        .commit()
+                    OpenLogin();
 
                     drawer.close()
 
+                }
+                R.id.profile_drawer_button -> {
+                    //TODO
                 }
             }
 
@@ -67,9 +65,44 @@ class AppDrawer : Fragment() {
         }
     }
 
+    fun OpenLogin(){
+        val loginScreen = LoginScreen();
+        childFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.enter_from_right, R.anim.exit_to_right,
+                R.anim.enter_from_right, R.anim.exit_to_right)
+            .replace(R.id.reusableDialogContainer, loginScreen)
+            .addToBackStack(null)
+            .commit()
+    }
+
     fun OpenDrawer()
     {
         drawer.open()
     }
+
+    fun CheckLoginState(){
+        val isLoginActive = MyFirebase.authentication.IsLoginActive()
+
+        navigationDrawer.menu.findItem(R.id.login_drawer_button).isVisible = !isLoginActive;
+        navigationDrawer.menu.findItem(R.id.profile_drawer_button).isVisible = isLoginActive;
+    }
+
+    override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDrawerOpened(drawerView: View) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDrawerClosed(drawerView: View) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDrawerStateChanged(newState: Int) {
+        TODO("Not yet implemented")
+    }
+
 
 }

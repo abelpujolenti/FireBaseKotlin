@@ -11,6 +11,14 @@
 
         </item>
 
+        <item
+            android:id="@+id/profile_drawer_button"
+            android:title="@string/profile_title"
+            android:icon="@drawable/profile_icon"
+            android:visible="false">
+
+        </item>
+
     </group>
 
 </menu>

@@ -12,6 +12,7 @@
 
     <!-- Margin Values -->
     <dimen name="margin_normal">@dimen/medium</dimen>
+    <dimen name="margin_message">@dimen/small</dimen>
 
     <!-- Shadow Values -->
     <dimen name="shadow_elevation">@dimen/small</dimen>

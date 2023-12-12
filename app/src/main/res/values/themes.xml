@@ -37,6 +37,7 @@
         <item name="bottomNavigationStyle">@style/ModuloDosFirabase.BottomBar</item>
         <item name="snackbarStyle">@style/ModuloDosFirebaseCDI.Snackbar</item>
         <item name="snackbarTextViewStyle">@style/ModuloDosFirebaseCDI.Snackbar.TextView</item>
+        <item name="android:textViewStyle">@style/ModuloDosFirebaseCDI.TextView</item>
 
     </style>
 
@@ -93,6 +94,10 @@
     </style>
 
     <style name="ModuloDosFirebaseCDI.Snackbar.TextView" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/baseLight</item>
+    </style>
+
+    <style name="ModuloDosFirebaseCDI.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@color/baseLight</item>
     </style>
 
