@@ -11,6 +11,7 @@ class MyFirebase  {
         val crashlytics = MyCrashlytics();
         val dataBase = MyFirebaseDatabase();
         val storage = MyFirebaseStorage();
+        val remoteConfig = MyFirebaseRemoteConfig();
 
         fun init(appContext: Application)
         {

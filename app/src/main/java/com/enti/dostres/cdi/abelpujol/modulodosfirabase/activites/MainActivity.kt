@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
             key("IsSubnormal", true)
             key("Level of Subnormality", 9001)
         };
+
+        setTheme(MyFirebase.remoteConfig.GetTheme().themeId)
     }
 
 }
