@@ -1,5 +1,6 @@
 package com.enti.dostres.cdi.abelpujol.modulodosfirabase.fragments.screens.chat
 
+import android.graphics.BitmapFactory
 import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
@@ -9,6 +10,11 @@ import com.enti.dostres.cdi.abelpujol.modulodosfirabase.R
 import com.enti.dostres.cdi.abelpujol.modulodosfirabase.clases.firebase.MyFirebase
 import com.enti.dostres.cdi.abelpujol.modulodosfirabase.clases.firebase.models.DataBaseMessage
 import com.google.android.material.textview.MaterialTextView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import java.net.URL
 
 class MessageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -31,9 +37,19 @@ class MessageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             message.visibility = View.GONE
         }
 
-        dataBaseMessage.imageUrl?.let {
-            //TODO load image
-            message.visibility = View.VISIBLE
+        dataBaseMessage.imageUrl?.let { imageUrl ->
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val stream = URL(imageUrl).openStream()
+                val bitMap = BitmapFactory.decodeStream(stream)
+
+                CoroutineScope(Dispatchers.Main).launch {
+
+                    image.setImageBitmap(bitMap)
+                    image.visibility = View.VISIBLE
+                }
+            }
+
         } ?: kotlin.run {
             message.visibility = View.GONE
         }
