@@ -15,4 +15,5 @@
     <string name="unknown_user">User Unknown</string>
     <string name="profile_title">Profile</string>
     <string name="chat_upload_image_error">Upload Image Error</string>
+    <string name="default_push_channel_name">Generic Pushes</string>
 </resources>
